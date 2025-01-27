@@ -14,17 +14,18 @@
 
 	// Emoji mapping
 	const emojiMap = {
-		windows: '🪟',
-		macos: '🍎',
-		linux: '🐧',
-		android: '📱',
-		'open-source': '📘',
-		'closed-source': '📕',
-		gpu: '🔄',
-		'electron': '🌐',
-		theming: '🎨',
-		ai: '🤖',
-    'file previews': '📁'
+		Windows: '🪟',
+		macOS: '🍎',
+		Linux: '🐧',
+		Android: '📱',
+		'Open Source': '📘',
+		'Proprietary': '📕',
+		GPU: '⚡',
+		'Electron': '🌐',
+		Theming: '🎨',
+		AI: '🤖',
+    'File Previews': '📁',
+    Wayland: '✨'
 	};
 
 	// Fuzzy search configuration

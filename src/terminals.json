@@ -2,40 +2,40 @@
   {
     "name": "Waveterm",
     "url": "https://github.com/wavetermdev/waveterm",
-    "platforms": ["linux", "macos"],
-    "tags": ["open-source", "file previews", "ai"],
+    "platforms": ["Linux", "macOS"],
+    "tags": ["Open Source", "File Previews", "AI", "Electron"],
     "features": ["Built-in AI", "File browser/editor", "Tiling layout"],
-    "description": "Open-source terminal with superpowers, integrating file previews, file editing, AI, web browsing, and workspace organization."
+    "description": "Open Source terminal with superpowers, integrating file previews, file editing, AI, web browsing, and workspace organization."
   },
   {
     "name": "Warp",
     "url": "https://www.warp.dev",
-    "platforms": ["macos", "linux"],
-    "tags": ["closed-source", "ai"],
+    "platforms": ["macOS", "Linux"],
+    "tags": ["Proprietary", "AI"],
     "features": ["Command suggestions", "Team workflows", "Blocks-based UI"],
     "description": "AI-enhanced terminal with collaborative features."
   },
   {
     "name": "Ghostty",
     "url": "https://ghostty.org/",
-    "platforms": ["macos"],
-    "tags": ["open-source"],
+    "platforms": ["macOS"],
+    "tags": ["Open Source"],
     "features": ["Native UI", "Drag-and-drop tabs", "GPU-accelerated rendering"],
     "description": "A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
   },
   {
     "name": "Kitty",
     "url": "https://github.com/kovidgoyal/kitty",
-    "platforms": ["windows", "macos", "linux"],
-    "tags": ["open-source", "gpu"],
+    "platforms": ["Windows", "macOS", "Linux"],
+    "tags": ["Open Source", "GPU"],
     "features": ["Tiling layout", "Ligatures", "Scripting via Python"],
     "description": "GPU-powered terminal with advanced layout and image support."
   },
   {
     "name": "Foot",
     "url": "https://codeberg.org/dnkl/foot",
-    "platforms": ["linux", "bsd"],
-    "tags": ["open-source", "wayland", "lightweight"],
+    "platforms": ["Linux"],
+    "tags": ["Open Source", "Wayland"],
     "features": [
       "Wayland native",
       "Scrollback search",
@@ -46,80 +46,80 @@
 	{
 		"name": "Alacritty",
 		"url": "https://github.com/alacritty/alacritty",
-		"platforms": ["windows", "macos", "linux"],
-		"tags": ["open-source", "gpu"],
+		"platforms": ["Windows", "macOS", "Linux"],
+		"tags": ["Open Source", "GPU"],
 		"features": ["Custom themes", "Vi mode", "Cross-platform sync"],
 		"description": "A blazing-fast, GPU-accelerated terminal with minimalist design."
 	},
 	{
 		"name": "Hyper",
 		"url": "https://hyper.is",
-		"platforms": ["windows", "macos", "linux"],
-		"tags": ["open-source", "electron", "theming"],
+		"platforms": ["Windows", "macOS", "Linux"],
+		"tags": ["Open Source", "Electron", "Theming"],
 		"features": ["CSS/JS theming", "250+ plugins", "Tabbed UI"],
 		"description": "Electron-based terminal with extensible plugins and web tech."
 	},
 	{
 		"name": "Tabby (formerly Terminus)",
 		"url": "https://tabby.sh",
-		"platforms": ["windows", "macos", "linux"],
-		"tags": ["open-source", "theming"],
+		"platforms": ["Windows", "macOS", "Linux"],
+		"tags": ["Open Source", "Theming"],
 		"features": ["Split panes", "Serial port support", "Plugin ecosystem"],
 		"description": "Modern, configurable terminal with SSH client and workflows."
 	},
 	{
 		"name": "WezTerm",
 		"url": "https://wezfurlong.org/wezterm/",
-		"platforms": ["windows", "macos", "linux"],
-		"tags": ["open-source", "gpu"],
+		"platforms": ["Windows", "macOS", "Linux"],
+		"tags": ["Open Source", "GPU"],
 		"features": ["Lua config", "Ligatures", "Sixel graphics"],
 		"description": "GPU-accelerated terminal with multiplexing and image support."
 	},
 	{
 		"name": "iTerm2",
 		"url": "https://iterm2.com",
-		"platforms": ["macos"],
-		"tags": ["open-source", "theming"],
+		"platforms": ["macOS"],
+		"tags": ["Open Source", "Theming"],
 		"features": ["Autocomplete", "Image previews", "Tmux integration"],
 		"description": "Powerful macOS terminal with split panes and search."
 	},
 	{
 		"name": "Terminator",
 		"url": "https://gnometerminator.blogspot.com",
-		"platforms": ["linux"],
-		"tags": ["open-source"],
+		"platforms": ["Linux"],
+		"tags": ["Open Source"],
 		"features": ["Grid-based layout", "Drag-and-drop tabs", "Custom layouts"],
 		"description": "Grid-based terminal for advanced window splitting."
 	},
 	{
 		"name": "Tilix",
 		"url": "https://gnunn1.github.io/tilix-web/",
-		"platforms": ["linux"],
-		"tags": ["open-source"],
+		"platforms": ["Linux"],
+		"tags": ["Open Source"],
 		"features": ["Tiling", "Quake-style drop-down", "Session saving"],
 		"description": "Tiling terminal with Quake-style drop-down."
 	},
 	{
 		"name": "GNOME Terminal",
 		"url": "https://wiki.gnome.org/Apps/Terminal",
-		"platforms": ["linux"],
-		"tags": ["open-source"],
+		"platforms": ["Linux"],
+		"tags": ["Open Source"],
 		"features": ["Profiles", "Transparency", "Systemd support"],
 		"description": "Default GNOME terminal with simplicity and integration."
 	},
 	{
 		"name": "Konsole",
 		"url": "https://konsole.kde.org",
-		"platforms": ["linux"],
-		"tags": ["open-source"],
+		"platforms": ["Linux"],
+		"tags": ["Open Source"],
 		"features": ["Split views", "Bookmarks", "Activity tracking"],
 		"description": "KDE's feature-rich terminal with scriptable sessions."
 	},
 	{
 		"name": "Termux",
 		"url": "https://termux.com",
-		"platforms": ["android"],
-		"tags": ["open-source", "linux"],
+		"platforms": ["Android"],
+		"tags": ["Open Source", "Linux"],
 		"features": ["SSH", "Development tools", "API access"],
 		"description": "Android terminal with Linux package ecosystem."
 	}
