@@ -120,7 +120,7 @@
 						<div class="mb-4 flex flex-wrap gap-2">
 							{#each term.tags as tag}
 								<span
-									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-sm dark:bg-zinc-700"
+									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-700"
 								>
 									{emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
 								</span>
