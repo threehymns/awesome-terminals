@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import { ModeWatcher } from 'mode-watcher';
-	import "@fontsource/fira-sans";
+	import '@fontsource-variable/jetbrains-mono';
 	let { children } = $props();
 </script>
 
@@ -13,6 +13,6 @@
 
 <style>
 	:global(body) {
-		font-family: "Fira Sans", system-ui, sans-serif;
+		font-family: 'JetBrains Mono Variable', system-ui, sans-serif;
 	}
 </style>

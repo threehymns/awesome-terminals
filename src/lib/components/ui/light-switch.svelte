@@ -5,7 +5,7 @@
   import { Button } from "$lib/components/ui/button/index.js";
  </script>
   
- <Button onclick={toggleMode} class="relative" variant="outline" size="icon">
+ <Button onclick={toggleMode} class="relative h-11 w-11" variant="outline">
   <Sun
    class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all duration-300 ease-in-out dark:-rotate-90 dark:scale-0"
   />

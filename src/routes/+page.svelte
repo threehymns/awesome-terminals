@@ -4,7 +4,7 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-  import { SearchX } from 'lucide-svelte'
+  import { Search, SearchX } from 'lucide-svelte'
   import LightSwitch from '@/components/ui/light-switch.svelte';
   import autoAnimate from '@formkit/auto-animate';
   import Fuse from 'fuse.js';
@@ -64,33 +64,44 @@
 	}
 </script>
 
-<div class="min-h-screen bg-zinc-100 p-8 dark:bg-zinc-900 transition-colors duration-300">
+<div class="min-h-screen bg-zinc-100 p-8 dark:bg-black transition-colors duration-300">
 	<div class="mx-auto max-w-6xl">
-    <h1 class="mb-8 text-3xl font-bold text-center">Awesome Terminals</h1>
-		<!-- Search and Filters -->
-		<div class="mb-8 space-y-4">
-			<div class="flex space-x-2">
-        <Input type="text" bind:value={searchTerm} placeholder="Filter terminals..." class="" />
+    <h1 class="mb-12 text-4xl font-extrabold text-center tracking-tight bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-600 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-500 bg-clip-text text-transparent">
+      Awesome Terminals
+    </h1>
+    
+    <!-- Search and Filters -->
+    <div class="mb-12 space-y-6">
+      <div class="relative flex gap-3">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400 dark:text-zinc-500">
+          <Search class="h-5 w-5 transition-colors" />
+        </div>
+        <Input 
+          type="text" 
+          bind:value={searchTerm} 
+          placeholder="Filter terminals..." 
+          class="pl-10 h-11 w-full rounded-lg bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 focus-visible:ring-2 focus-visible:ring-indigo-500/50 focus-visible:border-indigo-500 transition-all" 
+        />
         <LightSwitch />
       </div>
-
-			<div class="flex flex-wrap gap-2">
-				{#each Object.keys(emojiMap) as tag}
-					<button
-						on:click={() => toggleFilter(tag)}
-						class:active={activeFilters.has(tag)}
-						class="flex items-center rounded-full border px-4 py-2 transition-colors {activeFilters.has(
-							tag
-						)
-							? 'border-blue-600 bg-blue-500 text-white'
-							: 'border-zinc-300 bg-white text-zinc-700 hover:border-blue-400 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200'}"
-					>
-						<span class="mr-2">{emojiMap[tag]}</span>
-						{tag.replace('-', ' ')}
-					</button>
-				{/each}
-			</div>
-		</div>
+    
+      <div class="flex flex-wrap gap-2">
+        {#each Object.keys(emojiMap) as tag}
+          <button
+            on:click={() => toggleFilter(tag)}
+            class:active={activeFilters.has(tag)}
+            class="flex items-center rounded-full border px-3 py-1.5 text-sm font-medium transition-all 
+                   hover:scale-[1.02] active:scale-[0.98] outline-hidden focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-black
+                   {activeFilters.has(tag)
+                     ? 'border-indigo-600 bg-indigo-500 dark:bg-indigo-950 text-white shadow-lg shadow-indigo-500/20'
+                     : 'border-zinc-200 bg-white text-zinc-700 hover:border-indigo-300 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:border-indigo-600'}"
+          >
+            <span class="mr-1">{emojiMap[tag]}</span>
+            {tag.replace('-', ' ')}
+          </button>
+        {/each}
+      </div>
+    </div>
 
 		<!-- Terminal Grid -->
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" use:autoAnimate>
@@ -103,7 +114,7 @@
 									href={term.url}
 									target="_blank"
 									rel="noreferrer"
-									class="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+									class="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
 								>
 									{term.name}
 								</a>
@@ -121,7 +132,7 @@
 						<div class="mb-4 flex flex-wrap gap-2">
 							{#each term.tags as tag}
 								<span
-									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-700"
+									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
 								>
 									{emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
 								</span>
@@ -144,8 +155,8 @@
 					</CardContent>
 				</Card>
 			{:else}
-				<div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
-          <SearchX strokeWidth={1} class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400" />
+      <div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+          <SearchX strokeWidth={1} class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400 animate-pulse" />
 					<h2 class="mb-4 text-2xl font-bold text-zinc-700 dark:text-zinc-300">
 						No Terminals Found
 					</h2>
