@@ -4,6 +4,7 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
   import { Search, SearchX } from 'lucide-svelte'
   import LightSwitch from '@/components/ui/light-switch.svelte';
   import autoAnimate from '@formkit/auto-animate';
@@ -121,7 +122,14 @@
 							</h2>
 							<div class="flex space-x-1">
 								{#each term.platforms as platform}
-									<button class="text-xl" title={platform} on:click={() => toggleFilter(platform)}>{emojiMap[platform]}</button>
+                  <Tooltip.Provider>
+                    <Tooltip.Root>
+									    <Tooltip.Trigger class="text-xl hover:scale-110 transition-all" onclick={() => toggleFilter(platform)}>
+                        {emojiMap[platform]}
+                        <Tooltip.Content> {platform} </Tooltip.Content>
+                      </Tooltip.Trigger>
+                    </Tooltip.Root>
+                  </Tooltip.Provider>
 								{/each}
 							</div>
 						</div>
