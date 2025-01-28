@@ -1,7 +1,7 @@
 [
   {
-    "name": "Waveterm",
-    "url": "https://github.com/wavetermdev/waveterm",
+    "name": "Wave Terminal",
+    "url": "https://www.waveterm.dev/",
     "platforms": ["Linux", "macOS"],
     "tags": ["Open Source", "File Previews", "AI", "Electron"],
     "features": ["Built-in AI", "File browser/editor", "Tiling layout"],
@@ -18,14 +18,14 @@
   {
     "name": "Ghostty",
     "url": "https://ghostty.org/",
-    "platforms": ["macOS"],
-    "tags": ["Open Source"],
+    "platforms": ["macOS", "Linux"],
+    "tags": ["Open Source", "Theming", "GPU"],
     "features": ["Native UI", "Drag-and-drop tabs", "GPU-accelerated rendering"],
     "description": "A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
   },
   {
     "name": "Kitty",
-    "url": "https://github.com/kovidgoyal/kitty",
+    "url": "https://sw.kovidgoyal.net/kitty/",
     "platforms": ["Windows", "macOS", "Linux"],
     "tags": ["Open Source", "GPU"],
     "features": ["Tiling layout", "Ligatures", "Scripting via Python"],
@@ -45,7 +45,7 @@
   },  
 	{
 		"name": "Alacritty",
-		"url": "https://github.com/alacritty/alacritty",
+		"url": "https://alacritty.org/",
 		"platforms": ["Windows", "macOS", "Linux"],
 		"tags": ["Open Source", "GPU"],
 		"features": ["Custom themes", "Vi mode", "Cross-platform sync"],
@@ -53,7 +53,7 @@
 	},
 	{
 		"name": "Hyper",
-		"url": "https://hyper.is",
+		"url": "https://hyper.is/",
 		"platforms": ["Windows", "macOS", "Linux"],
 		"tags": ["Open Source", "Electron", "Theming"],
 		"features": ["CSS/JS theming", "250+ plugins", "Tabbed UI"],
@@ -84,24 +84,8 @@
 		"description": "Powerful macOS terminal with split panes and search."
 	},
 	{
-		"name": "Terminator",
-		"url": "https://gnometerminator.blogspot.com",
-		"platforms": ["Linux"],
-		"tags": ["Open Source"],
-		"features": ["Grid-based layout", "Drag-and-drop tabs", "Custom layouts"],
-		"description": "Grid-based terminal for advanced window splitting."
-	},
-	{
-		"name": "Tilix",
-		"url": "https://gnunn1.github.io/tilix-web/",
-		"platforms": ["Linux"],
-		"tags": ["Open Source"],
-		"features": ["Tiling", "Quake-style drop-down", "Session saving"],
-		"description": "Tiling terminal with Quake-style drop-down."
-	},
-	{
 		"name": "GNOME Terminal",
-		"url": "https://wiki.gnome.org/Apps/Terminal",
+		"url": "https://help.gnome.org/users/gnome-terminal/stable/",
 		"platforms": ["Linux"],
 		"tags": ["Open Source"],
 		"features": ["Profiles", "Transparency", "Systemd support"],

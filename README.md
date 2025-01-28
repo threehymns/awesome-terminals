@@ -20,7 +20,6 @@ A curated collection of modern, feature-rich (or minimal!) terminal emulators fo
 
 ### TODO
 
-- [ ] Remove outdated/classic terminals
 - [ ] Publish a live website
 
 ## 🚀 Getting Started
