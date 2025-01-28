@@ -65,9 +65,9 @@
 	}
 </script>
 
-<div class="min-h-screen bg-zinc-100 p-8 dark:bg-black transition-colors duration-300">
+<div class="min-h-screen bg-zinc-100 p-12 dark:bg-black transition-colors duration-300">
 	<div class="mx-auto max-w-6xl">
-    <h1 class="mb-12 text-4xl font-extrabold text-center tracking-tight bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-600 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-500 bg-clip-text text-transparent">
+    <h1 class="mb-12 text-4xl font-extrabold w-fit tracking-tight bg-gradient-to-r from-zinc-900 to-indigo-600 dark:from-zinc-100 dark:to-indigo-500 bg-clip-text text-transparent">
       Awesome Terminals
     </h1>
     
