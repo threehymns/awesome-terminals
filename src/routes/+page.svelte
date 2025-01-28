@@ -4,6 +4,7 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+  import { SearchX } from 'lucide-svelte'
   import LightSwitch from '@/components/ui/light-switch.svelte';
   import autoAnimate from '@formkit/auto-animate';
   import Fuse from 'fuse.js';
@@ -143,8 +144,33 @@
 					</CardContent>
 				</Card>
 			{:else}
-				<div class="col-span-full text-center py-12 text-zinc-500 dark:text-zinc-400">
-					No terminals found matching your criteria
+				<div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+          <SearchX strokeWidth={1} class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400" />
+					<h2 class="mb-4 text-2xl font-bold text-zinc-700 dark:text-zinc-300">
+						No Terminals Found
+					</h2>
+					<p class="mb-6 max-w-md text-zinc-600 dark:text-zinc-400">
+						Try broadening your search or filters. We have a diverse collection of terminals waiting
+						to be discovered!
+					</p>
+					<div class="flex space-x-4">
+						<Button
+							variant="outline"
+							onclick={() => {
+								searchTerm = '';
+								activeFilters = new Set();
+							}}
+						>
+							Clear Filters
+						</Button>
+						<Button
+							variant="secondary"
+							href="https://github.com/threehymns/awesome-terminals/issues/new"
+							target="_blank"
+						>
+							Suggest a Terminal
+						</Button>
+					</div>
 				</div>
 			{/each}
 		</div>
