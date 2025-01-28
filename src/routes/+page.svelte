@@ -63,7 +63,7 @@
 	}
 </script>
 
-<div class="min-h-screen bg-zinc-100 p-8 dark:bg-zinc-900">
+<div class="min-h-screen bg-zinc-100 p-8 dark:bg-zinc-900 transition-colors duration-300">
 	<div class="mx-auto max-w-6xl">
     <h1 class="mb-8 text-3xl font-bold text-center">Awesome Terminals</h1>
 		<!-- Search and Filters -->
