@@ -121,7 +121,7 @@
 							</h2>
 							<div class="flex space-x-1">
 								{#each term.platforms as platform}
-									<span class="text-xl" title={platform}>{emojiMap[platform]}</span>
+									<button class="text-xl" title={platform} on:click={() => toggleFilter(platform)}>{emojiMap[platform]}</button>
 								{/each}
 							</div>
 						</div>
@@ -131,11 +131,12 @@
 					<CardContent>
 						<div class="mb-4 flex flex-wrap gap-2">
 							{#each term.tags as tag}
-								<span
+								<button
 									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
+                  on:click={() => toggleFilter(tag)}
 								>
 									{emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
-								</span>
+                </button>
 							{/each}
 						</div>
 						<ul class="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
