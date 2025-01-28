@@ -45,7 +45,6 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/jetbrains-mono": "^5.1.2",
-		"@formkit/auto-animate": "^0.8.2",
 		"@tailwindcss/vite": "^4.0.0",
 		"fuse.js": "^7.0.0",
 		"mode-watcher": "^0.5.1",
