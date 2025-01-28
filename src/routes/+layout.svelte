@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
+	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { ModeWatcher } from 'mode-watcher';
 	import '@fontsource-variable/jetbrains-mono';
 	let { children } = $props();

@@ -1,48 +1,44 @@
 [
-  {
-    "name": "Wave Terminal",
-    "url": "https://www.waveterm.dev/",
-    "platforms": ["Linux", "macOS"],
-    "tags": ["Open Source", "File Previews", "AI", "Electron"],
-    "features": ["Built-in AI", "File browser/editor", "Tiling layout"],
-    "description": "Open Source terminal with superpowers, integrating file previews, file editing, AI, web browsing, and workspace organization."
-  },
-  {
-    "name": "Warp",
-    "url": "https://www.warp.dev",
-    "platforms": ["macOS", "Linux"],
-    "tags": ["Proprietary", "AI"],
-    "features": ["Command suggestions", "Team workflows", "Blocks-based UI"],
-    "description": "AI-enhanced terminal with collaborative features."
-  },
-  {
-    "name": "Ghostty",
-    "url": "https://ghostty.org/",
-    "platforms": ["macOS", "Linux"],
-    "tags": ["Open Source", "Theming", "GPU"],
-    "features": ["Native UI", "Drag-and-drop tabs", "GPU-accelerated rendering"],
-    "description": "A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
-  },
-  {
-    "name": "Kitty",
-    "url": "https://sw.kovidgoyal.net/kitty/",
-    "platforms": ["Windows", "macOS", "Linux"],
-    "tags": ["Open Source", "GPU"],
-    "features": ["Tiling layout", "Ligatures", "Scripting via Python"],
-    "description": "GPU-powered terminal with advanced layout and image support."
-  },
-  {
-    "name": "Foot",
-    "url": "https://codeberg.org/dnkl/foot",
-    "platforms": ["Linux"],
-    "tags": ["Open Source", "Wayland"],
-    "features": [
-      "Wayland native",
-      "Scrollback search",
-      "Keyboard-driven URL detection"
-    ],
-    "description": "A fast, lightweight, and minimalistic Wayland terminal emulator."
-  },  
+	{
+		"name": "Wave Terminal",
+		"url": "https://www.waveterm.dev/",
+		"platforms": ["Linux", "macOS"],
+		"tags": ["Open Source", "File Previews", "AI", "Electron"],
+		"features": ["Built-in AI", "File browser/editor", "Tiling layout"],
+		"description": "Open Source terminal with superpowers, integrating file previews, file editing, AI, web browsing, and workspace organization."
+	},
+	{
+		"name": "Warp",
+		"url": "https://www.warp.dev",
+		"platforms": ["macOS", "Linux"],
+		"tags": ["Proprietary", "AI"],
+		"features": ["Command suggestions", "Team workflows", "Blocks-based UI"],
+		"description": "AI-enhanced terminal with collaborative features."
+	},
+	{
+		"name": "Ghostty",
+		"url": "https://ghostty.org/",
+		"platforms": ["macOS", "Linux"],
+		"tags": ["Open Source", "Theming", "GPU"],
+		"features": ["Native UI", "Drag-and-drop tabs", "GPU-accelerated rendering"],
+		"description": "A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
+	},
+	{
+		"name": "Kitty",
+		"url": "https://sw.kovidgoyal.net/kitty/",
+		"platforms": ["Windows", "macOS", "Linux"],
+		"tags": ["Open Source", "GPU"],
+		"features": ["Tiling layout", "Ligatures", "Scripting via Python"],
+		"description": "GPU-powered terminal with advanced layout and image support."
+	},
+	{
+		"name": "Foot",
+		"url": "https://codeberg.org/dnkl/foot",
+		"platforms": ["Linux"],
+		"tags": ["Open Source", "Wayland"],
+		"features": ["Wayland native", "Scrollback search", "Keyboard-driven URL detection"],
+		"description": "A fast, lightweight, and minimalistic Wayland terminal emulator."
+	},
 	{
 		"name": "Alacritty",
 		"url": "https://alacritty.org/",

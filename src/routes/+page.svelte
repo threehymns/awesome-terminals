@@ -4,11 +4,11 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
-  import { Search, SearchX } from 'lucide-svelte'
-  import LightSwitch from '@/components/ui/light-switch.svelte';
-  import autoAnimate from '@formkit/auto-animate';
-  import Fuse from 'fuse.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { Search, SearchX } from 'lucide-svelte';
+	import LightSwitch from '@/components/ui/light-switch.svelte';
+	import autoAnimate from '@formkit/auto-animate';
+	import Fuse from 'fuse.js';
 
 	// State
 	let searchTerm = '';
@@ -21,13 +21,13 @@
 		Linux: '🐧',
 		Android: '📱',
 		'Open Source': '📘',
-		'Proprietary': '📕',
+		Proprietary: '📕',
 		GPU: '⚡',
-		'Electron': '🌐',
+		Electron: '🌐',
 		Theming: '🎨',
 		AI: '🤖',
-    'File Previews': '📁',
-    Wayland: '✨'
+		'File Previews': '📁',
+		Wayland: '✨'
 	};
 
 	// Fuzzy search configuration
@@ -42,22 +42,25 @@
 
 	// Filtered terminals with fuzzy search
 	$: filteredTerminals = searchTerm
-		? fuse.search(searchTerm).map(result => result.item).filter((term) => {
-			const matchesFilters =
-				activeFilters.size === 0 || 
-				Array.from(activeFilters).every((filter) => 
-					term.tags.includes(filter) || term.platforms.includes(filter)
-				);
-			return matchesFilters;
-		})
+		? fuse
+				.search(searchTerm)
+				.map((result) => result.item)
+				.filter((term) => {
+					const matchesFilters =
+						activeFilters.size === 0 ||
+						Array.from(activeFilters).every(
+							(filter) => term.tags.includes(filter) || term.platforms.includes(filter)
+						);
+					return matchesFilters;
+				})
 		: terminals.filter((term) => {
-			const matchesFilters =
-				activeFilters.size === 0 || 
-				Array.from(activeFilters).every((filter) => 
-					term.tags.includes(filter) || term.platforms.includes(filter)
-				);
-			return matchesFilters;
-		});
+				const matchesFilters =
+					activeFilters.size === 0 ||
+					Array.from(activeFilters).every(
+						(filter) => term.tags.includes(filter) || term.platforms.includes(filter)
+					);
+				return matchesFilters;
+			});
 
 	function toggleFilter(tag) {
 		activeFilters.has(tag) ? activeFilters.delete(tag) : activeFilters.add(tag);
@@ -65,44 +68,48 @@
 	}
 </script>
 
-<div class="min-h-screen bg-zinc-100 p-12 dark:bg-black transition-colors duration-300">
+<div class="min-h-screen bg-zinc-100 p-12 transition-colors duration-300 dark:bg-black">
 	<div class="mx-auto max-w-6xl">
-    <h1 class="mb-12 text-4xl font-extrabold w-fit tracking-tight bg-gradient-to-r from-zinc-900 to-indigo-600 dark:from-zinc-100 dark:to-indigo-500 bg-clip-text text-transparent">
-      Awesome Terminals
-    </h1>
-    
-    <!-- Search and Filters -->
-    <div class="mb-12 space-y-6">
-      <div class="relative flex gap-3">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400 dark:text-zinc-500">
-          <Search class="h-5 w-5 transition-colors" />
-        </div>
-        <Input 
-          type="text" 
-          bind:value={searchTerm} 
-          placeholder="Filter terminals..." 
-          class="pl-10 h-11 w-full rounded-lg bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 focus-visible:ring-2 focus-visible:ring-indigo-500/50 focus-visible:border-indigo-500 transition-all" 
-        />
-        <LightSwitch />
-      </div>
-    
-      <div class="flex flex-wrap gap-2">
-        {#each Object.keys(emojiMap) as tag}
-          <button
-            on:click={() => toggleFilter(tag)}
-            class:active={activeFilters.has(tag)}
-            class="flex items-center rounded-full border px-3 py-1.5 text-sm font-medium transition-all 
-                   hover:scale-[1.02] active:scale-[0.98] outline-hidden focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-black
+		<h1
+			class="mb-12 w-fit bg-gradient-to-r from-zinc-900 to-indigo-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent dark:from-zinc-100 dark:to-indigo-500"
+		>
+			Awesome Terminals
+		</h1>
+
+		<!-- Search and Filters -->
+		<div class="mb-12 space-y-6">
+			<div class="relative flex gap-3">
+				<div
+					class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500"
+				>
+					<Search class="h-5 w-5 transition-colors" />
+				</div>
+				<Input
+					type="text"
+					bind:value={searchTerm}
+					placeholder="Filter terminals..."
+					class="h-11 w-full rounded-lg border-zinc-200 bg-white pl-10 transition-all focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-500/50 dark:border-zinc-800 dark:bg-zinc-900"
+				/>
+				<LightSwitch />
+			</div>
+
+			<div class="flex flex-wrap gap-2">
+				{#each Object.keys(emojiMap) as tag}
+					<button
+						on:click={() => toggleFilter(tag)}
+						class:active={activeFilters.has(tag)}
+						class="flex items-center rounded-full border px-3 py-1.5 text-sm font-medium outline-hidden
+                   transition-all hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 active:scale-[0.98] dark:focus-visible:ring-offset-black
                    {activeFilters.has(tag)
-                     ? 'border-indigo-600 bg-indigo-500 dark:bg-indigo-950 text-white shadow-lg shadow-indigo-500/20'
-                     : 'border-zinc-200 bg-white text-zinc-700 hover:border-indigo-300 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:border-indigo-600'}"
-          >
-            <span class="mr-1">{emojiMap[tag]}</span>
-            {tag.replace('-', ' ')}
-          </button>
-        {/each}
-      </div>
-    </div>
+							? 'border-indigo-600 bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 dark:bg-indigo-950'
+							: 'border-zinc-200 bg-white text-zinc-700 hover:border-indigo-300 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:border-indigo-600'}"
+					>
+						<span class="mr-1">{emojiMap[tag]}</span>
+						{tag.replace('-', ' ')}
+					</button>
+				{/each}
+			</div>
+		</div>
 
 		<!-- Terminal Grid -->
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" use:autoAnimate>
@@ -122,14 +129,17 @@
 							</h2>
 							<div class="flex space-x-1">
 								{#each term.platforms as platform}
-                  <Tooltip.Provider>
-                    <Tooltip.Root>
-									    <Tooltip.Trigger class="text-xl hover:scale-110 transition-all" onclick={() => toggleFilter(platform)}>
-                        {emojiMap[platform]}
-                        <Tooltip.Content> {platform} </Tooltip.Content>
-                      </Tooltip.Trigger>
-                    </Tooltip.Root>
-                  </Tooltip.Provider>
+									<Tooltip.Provider>
+										<Tooltip.Root>
+											<Tooltip.Trigger
+												class="text-xl transition-all hover:scale-110"
+												onclick={() => toggleFilter(platform)}
+											>
+												{emojiMap[platform]}
+												<Tooltip.Content>{platform}</Tooltip.Content>
+											</Tooltip.Trigger>
+										</Tooltip.Root>
+									</Tooltip.Provider>
 								{/each}
 							</div>
 						</div>
@@ -141,10 +151,10 @@
 							{#each term.tags as tag}
 								<button
 									class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
-                  on:click={() => toggleFilter(tag)}
+									on:click={() => toggleFilter(tag)}
 								>
 									{emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
-                </button>
+								</button>
 							{/each}
 						</div>
 						<ul class="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
@@ -164,8 +174,11 @@
 					</CardContent>
 				</Card>
 			{:else}
-      <div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
-          <SearchX strokeWidth={1} class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400 animate-pulse" />
+				<div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+					<SearchX
+						strokeWidth={1}
+						class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400 animate-pulse"
+					/>
 					<h2 class="mb-4 text-2xl font-bold text-zinc-700 dark:text-zinc-300">
 						No Terminals Found
 					</h2>
