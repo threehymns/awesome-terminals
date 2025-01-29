@@ -1,11 +1,14 @@
 # Awesome Modern Terminals
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?&logo=github&logoColor=white)](https://github.com/threehymns/awesome-terminals)
 [![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-38B2AC?&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?&logo=github&logoColor=white)](https://github.com/threehymns/awesome-terminals)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?&logo=vercel&logoColor=white)](https://awesome-terminals.vercel.app/)
 
 A curated collection of modern, feature-rich (or minimal!) terminal emulators for developers. Discover, compare, and choose your next terminal with ease!
+
+### Live at [awesome-terminals.vercel.app](https://awesome-terminals.vercel.app/)
 
 ## 🌟 Features
 
@@ -17,10 +20,6 @@ A curated collection of modern, feature-rich (or minimal!) terminal emulators fo
   - Platform (Windows/macOS/Linux/Android)
   - And more!
 - **Community-Driven**: Easily add new terminals or update existing entries
-
-### TODO
-
-- [ ] Publish a live website
 
 ## 🚀 Getting Started
 
