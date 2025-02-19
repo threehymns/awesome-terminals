@@ -6,7 +6,7 @@
 	let { children } = $props();
 </script>
 
-<ModeWatcher />
+<ModeWatcher disableTransitions={false} />
 <ScrollArea class="h-screen">
 	{@render children()}
 </ScrollArea>

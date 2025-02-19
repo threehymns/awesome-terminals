@@ -7,11 +7,17 @@
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { Search, SearchX, ArrowDownUp } from 'lucide-svelte';
 	import LightSwitch from '@/components/ui/light-switch.svelte';
-  import { flip } from 'svelte/animate';
-  import { scale, fade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+	import { scale, fade } from 'svelte/transition';
 	import Fuse from 'fuse.js';
-  import { Separator } from '@/components/ui/separator';
-	import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger } from '@/components/ui/select';
+	import { Separator } from '@/components/ui/separator';
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectItem,
+		SelectTrigger
+	} from '@/components/ui/select';
 
 	// State
 	let searchTerm = '';
@@ -99,9 +105,9 @@
 		<!-- Search and Filters -->
 		<div class="mb-12 space-y-6">
 			<div class="flex gap-3">
-        <Select type="single" bind:value={sortOption}>
-					<SelectTrigger class="w-[180px] h-11 pl-9 relative">
-            <ArrowDownUp class="h-4 w-4 absolute left-3" />
+				<Select type="single" bind:value={sortOption}>
+					<SelectTrigger class="relative h-11 w-[180px] pl-9">
+						<ArrowDownUp class="absolute left-3 h-4 w-4" />
 						{#if sortOption === 'default'}
 							Default
 						{:else if sortOption === 'name-asc'}
@@ -120,22 +126,22 @@
 					</SelectContent>
 				</Select>
 				<div class="relative grow">
-          <div
-            class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500"
-          >
-            <Search class="h-5 w-5 transition-colors" />
-          </div>
-          <Input
-            type="text"
-            bind:value={searchTerm}
-            placeholder="Filter terminals..."
-            class="h-11 w-full rounded-lg border-zinc-200 bg-white pl-10 transition-all focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-500/50 dark:border-zinc-800 dark:bg-zinc-900"
-          />
-        </div>
+					<div
+						class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500"
+					>
+						<Search class="h-5 w-5 transition-colors" />
+					</div>
+					<Input
+						type="text"
+						bind:value={searchTerm}
+						placeholder="Filter terminals..."
+						class="h-11 w-full rounded-lg border-zinc-200 bg-white pl-10 transition-all focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-500/50 dark:border-zinc-800 dark:bg-zinc-900"
+					/>
+				</div>
 				<LightSwitch />
 			</div>
 
-			<div class="flex flex-wrap gap-2 items-center">
+			<div class="flex flex-wrap items-center gap-2">
 				{#each Object.keys(emojiMap) as tag}
 					<button
 						on:click={() => toggleFilter(tag)}
@@ -155,68 +161,79 @@
 			<!-- Terminal Grid -->
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{#each sortedTerminals as term (term.name)}
-					<div animate:flip={{ duration: 300 }} transition:scale={{ duration: 300 }} key={term.name}>
-            <Card class="h-fit" key={term.name}>
-              <CardHeader>
-                <div class="mb-2 flex justify-between">
-                  <h2 class="text-xl font-semibold">
-                    <a
-                      href={term.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      class="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-                    >
-                      {term.name}
-                    </a>
-                  </h2>
-                  <div class="flex space-x-1">
-                    {#each term.platforms as platform}
-                      <Tooltip.Provider>
-                        <Tooltip.Root>
-                          <Tooltip.Trigger
-                            class="text-xl transition-all hover:scale-110"
-                            onclick={() => toggleFilter(platform)}
-                          >
-                            {emojiMap[platform]}
-                            <Tooltip.Content>{platform}</Tooltip.Content>
-                          </Tooltip.Trigger>
-                        </Tooltip.Root>
-                      </Tooltip.Provider>
-                    {/each}
-                  </div>
-                </div>
-                <p class="mb-2 text-sm text-zinc-600 dark:text-zinc-400">{term.description}</p>
-              </CardHeader>
-              <CardContent>
-                <div class="mb-4 flex flex-wrap gap-2">
-                  {#each term.tags as tag}
-                    <button
-                      class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
-                      on:click={() => toggleFilter(tag)}
-                    >
-                      {emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
-                    </button>
-                  {/each}
-                </div>
-                <ul class="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
-                  {#each term.features as feature}
-                    <li class="flex items-center">
-                      <svg class="mr-2 h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  {/each}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+					<div
+						animate:flip={{ duration: 300 }}
+						transition:scale={{ duration: 300 }}
+						key={term.name}
+					>
+						<Card class="h-fit transition-colors" key={term.name}>
+							<CardHeader>
+								<div class="mb-2 flex justify-between">
+									<h2 class="text-xl font-semibold">
+										<a
+											href={term.url}
+											target="_blank"
+											rel="noreferrer"
+											class="hover:text-indigo-600 hover:underline hover:underline-offset-4 dark:hover:text-indigo-400"
+										>
+											{term.name}
+										</a>
+									</h2>
+									<div class="flex space-x-1">
+										{#each term.platforms as platform}
+											<Tooltip.Provider>
+												<Tooltip.Root>
+													<Tooltip.Trigger
+														class="text-xl transition-all hover:scale-110"
+														onclick={() => toggleFilter(platform)}
+													>
+														{emojiMap[platform]}
+														<Tooltip.Content>{platform}</Tooltip.Content>
+													</Tooltip.Trigger>
+												</Tooltip.Root>
+											</Tooltip.Provider>
+										{/each}
+									</div>
+								</div>
+								<p class="mb-2 text-sm text-zinc-600 dark:text-zinc-400">{term.description}</p>
+							</CardHeader>
+							<CardContent>
+								<div class="mb-4 flex flex-wrap gap-2">
+									{#each term.tags as tag}
+										<button
+											class="flex items-center rounded-full bg-zinc-100 px-2 py-1 text-xs dark:bg-zinc-800"
+											on:click={() => toggleFilter(tag)}
+										>
+											{emojiMap[tag]} <span class="ml-1">{tag.replace('-', ' ')}</span>
+										</button>
+									{/each}
+								</div>
+								<ul class="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+									{#each term.features as feature}
+										<li class="flex items-center">
+											<svg
+												class="mr-2 h-4 w-4 text-green-500"
+												fill="currentColor"
+												viewBox="0 0 20 20"
+											>
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+											{feature}
+										</li>
+									{/each}
+								</ul>
+							</CardContent>
+						</Card>
+					</div>
 				{:else}
-					<div class="col-span-full flex flex-col items-center justify-center py-16 text-center absolute right-1/2 translate-x-1/2" in:fade>
+					<div
+						class="col-span-full flex flex-col items-center justify-center py-16 text-center absolute right-1/2 translate-x-1/2"
+						in:fade
+					>
 						<SearchX
 							strokeWidth={1}
 							class="mb-4 h-24 w-24 text-zinc-600 dark:text-zinc-400 animate-pulse"
@@ -225,8 +242,8 @@
 							No Terminals Found
 						</h2>
 						<p class="mb-6 max-w-md text-zinc-600 dark:text-zinc-400">
-							Try broadening your search or filters. We have a diverse collection of terminals waiting
-							to be discovered!
+							Try broadening your search or filters. We have a diverse collection of terminals
+							waiting to be discovered!
 						</p>
 						<div class="flex space-x-4">
 							<Button
