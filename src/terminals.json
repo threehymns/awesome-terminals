@@ -102,5 +102,13 @@
 		"tags": ["Open Source", "Linux"],
 		"features": ["SSH", "Development tools", "API access"],
 		"description": "Android terminal with Linux package ecosystem."
+	},
+	{
+		"name": "Mel",
+		"url": "https://www.openmel.dev",
+		"platforms": ["macOS", "Windows", "Linux"],
+		"tags": ["AI"],
+		"features": ["AI coding agents", "Approvals for edits and commands", "VS Code extension"],
+		"description": "Agentic terminal with a team of AI coding agents that plan, write and test code."
 	}
 ]
